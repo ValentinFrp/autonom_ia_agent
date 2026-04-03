@@ -12,7 +12,6 @@ class TaskStatus(Enum):
 
 @dataclass
 class ToolCall:
-    """Représente un appel d'outil effectué par l'agent."""
     name: str
     inputs: dict[str, Any]
     output: str = ""
@@ -20,7 +19,6 @@ class ToolCall:
 
 @dataclass
 class AgentResult:
-    """Résultat final produit par l'agent après toutes ses itérations."""
     task: str
     summary: str
     tool_calls: list[ToolCall] = field(default_factory=list)
